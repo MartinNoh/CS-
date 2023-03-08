@@ -1,6 +1,6 @@
-## OOP (Object Oriented Programming)
+## OOP
 
-> 정의
+> 객체지향 프로그래밍(Object Oriented Programming)
 
 객체지향 프로그래밍은 컴퓨터 프로그래밍 패러다임  중 하나입니다. 이 패러다임에서 프로그램은 객체(Object)의 집합으로 구성되며, 객체는 데이터를 조작하는 함수(Method)를 함께 포함하고 있습니다.
 
