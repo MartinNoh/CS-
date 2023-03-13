@@ -20,3 +20,28 @@ Linux 프로젝트 중 버전관리 소프트웨어의 내부 개발이 필요�
 비선형적인 개발을 위해 브랜치 시스템을 도입했고, 원격저장소와 로컬을 분리함으로써 여러 개발자가 분산작업을 원활하게 할 수 있게 고안되었습니다.
 
 또한, 모든 커밋에 대해 Checksum(Hash)을 만들어 데이터 무결성을 보장합니다.(SHA-1)
+
+
+### Inside of Git
+1. Git은 기본적으로 파일 시스템의 스냅샷을 저장합니다.(커밋 당시의 Git 디렉토리의 모든 파일 정보를 저장)
+2. 또한 파일 및 스냅샷을 해시하여 빠르게 바뀐 버전인지, 아닌지를 체크합니다.
+3. 이후 스냅샷들의 크기가 커지면 주기적으로 git gc(garbage collection)를 통해 delta를 만듭니다.
+
+
+### Git 명령어
+#### 기초적인 명령어 사용
+- git init : Git 디렉토리를 시작합시다.
+- git add * : Git으로 관리할 파일을 골라봅시다.
+- git commit -m "메세지" : 메세지와 함께 디렉토리의 상태를 저장합시다.
+- git push : 원격 저장소에 커밋 내용을 보내봅시다.
+
+#### 조금 더 잘 알고 있다면
+- git checkout : 브랜치의 상태로 디렉토리를 변경합니다.
+- git brach {name} : 새로운 브랜치를 만듭니다.
+- git reset --hard HEAD : 마지막 커밋으로 모든 것을 되돌립니다.
+- git merge {branch-name} : 현재 체크아웃된 브랜치를 기준으로 name을 머지합니다.
+
+#### File Status Lifecycle
+![lifecycle.png](img/lifecycle.png)
+- git status : 파일들의 상태를 확인할 수 있습니다.
+- git status -s : 간단하게 보기 옵션 사용
